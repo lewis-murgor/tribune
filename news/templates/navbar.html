@@ -13,7 +13,7 @@
       <a class="navbar-brand" href="{% url 'newsToday' %}">News Today</a>
     </div>
     <!-- Adding a search form  -->
-    <div class="col-sm-4 col-md-4 navbar-right">
+    <div class="col-sm-4 col-md-4">
       <form class="navbar-form" role="search" action="{% url 'search_results' %}">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search Article" name="article">
@@ -25,7 +25,7 @@
     </div>
     <!-- search form end -->
 
-    <div class="col-sm-4 col-md-4">
+    <div class="col-sm-4 col-md-2 navbar-right">
       {% if user.is_authenticated %}
       <ul>
         <li class="dropdown">
@@ -35,6 +35,9 @@
           <ul class="dropdown-menu" role="menu">
             <li>
               <a href="{%url 'newsToday'%}">Home</a>
+            </li>
+            <li>
+              <a href="{%url 'profile'%}">{{user}}</a>
             </li>
             <li>
               <a href="{%url 'new-article'%}">Create Article</a>
