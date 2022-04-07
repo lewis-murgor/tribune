@@ -1,5 +1,6 @@
 {%extends 'all-news/base.html'%}
 {% load bootstrap3 %}
+{% load static%}
 
 {% block content %}
 {{block.super}}
@@ -38,7 +39,22 @@
     <input type="submit" value="Subscribe">
   </form>
 
+
 </div>
+
+{% for merch in merch %}
+<p>{{merch.name}}</p>
+
+{% empty %}
+    <div class="row">
+      <h2 class="text-center">There No merches</h2>
+    </div>
+    {% endfor %}
   
 </div>
+{% endblock %}
+<!--End of the block content-->
+{% block scripts %} 
+{{block.super}}
+  <script type="text/javascript" src="{%static 'js/newsletter.js'%}"></script>
 {% endblock %}

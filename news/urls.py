@@ -9,7 +9,10 @@ urlpatterns=[
     re_path(r'^search/', views.search_results, name='search_results'),
     re_path(r'^article/(\d+)',views.article,name ='article'),
     re_path(r'^new/article$', views.new_article, name='new-article'),
-    re_path(r'^accounts/profile', views.profile, name='profile')
+    re_path(r'^accounts/profile', views.profile, name='profile'),
+    re_path(r'^ajax/newsletter/$', views.newsletter, name='newsletter'),
+    re_path(r'^api/merch/$', views.MerchList.as_view()),
+    re_path(r'api/merch/merch-id/(?P<pk>[0-9]+)/$',views.MerchDescription.as_view())
 
 ]
 if settings.DEBUG:
